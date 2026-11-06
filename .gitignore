@@ -1,0 +1,14 @@
+# dados de cada instalação (nunca sobem)
+config.json
+escritorio.log
+versao.json
+chave-privada.pem
+*.pem
+!chave-publica.pem
+
+# Node portátil
+node/
+
+*.novo
+.DS_Store
+Thumbs.db

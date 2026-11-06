@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#17130f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Escritório IA">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Escritório IA</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icone.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icone.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<div id="scene"></div>
+
+<header>
+  <div>
+    <h1>Escritório IA</h1>
+    <div class="sub" id="sub">conectando…</div>
+    <div class="owners" id="owners"></div>
+  </div>
+  <div class="top-right">
+    <div class="actions">
+      <button class="btn" id="btnToday" title="Resumo do dia e linha do tempo">📊 Hoje</button>
+      <button class="btn" id="btnSettings" title="Avisos, visual e configurações">⚙</button>
+    </div>
+    <div class="legend">
+      <span><i class="dot" style="background:var(--desktop)"></i>Claude Desktop</span>
+      <span><i class="dot" style="background:var(--terminal)"></i>Terminal</span>
+      <span><i class="dot" style="background:var(--sdk)"></i>Agent SDK</span>
+      <span><i class="dot" style="background:var(--antigravity)"></i>Antigravity</span>
+      <span><i class="dot" style="background:var(--gemini)"></i>Gemini CLI</span>
+      <span><i class="dot" style="background:var(--wait)"></i>esperando você</span>
+    </div>
+  </div>
+</header>
+
+<aside id="feed"><h2 id="feedTitle">Atividade</h2><ol id="feedList"><li class="empty">Nada ainda. Mande uma mensagem em qualquer IA.</li></ol></aside>
+<div id="status" title="Saúde das fontes"><span class="live" id="live">●</span><span id="healthChips"></span></div>
+<div id="toasts"></div>
+
+<section class="panel" id="detail" aria-label="Detalhes da sessão">
+  <div class="ph"><h3 id="detailTitle"></h3><button class="x" data-close aria-label="Fechar">×</button></div>
+  <div class="pb" id="detailBody"></div>
+</section>
+
+<section class="panel" id="today" aria-label="Hoje">
+  <div class="ph"><h3>📊 Hoje</h3><button class="x" data-close aria-label="Fechar">×</button></div>
+  <div class="pb">
+    <div class="cards" id="todayCards"></div>
+    <h5>Linha do tempo (últimas 3 horas)</h5>
+    <div class="tl" id="timeline"></div>
+  </div>
+</section>
+
+<section class="panel" id="settings" aria-label="Configurações">
+  <div class="ph"><h3>⚙ Configurações</h3><button class="x" data-close aria-label="Fechar">×</button></div>
+  <div class="pb" id="settingsBody"></div>
+</section>
+
+<section class="panel" id="healthBox" aria-label="Saúde">
+  <div class="ph"><h3>Saúde das fontes</h3><button class="x" data-close aria-label="Fechar">×</button></div>
+  <div class="pb" id="healthBody"></div>
+</section>
+
+<script type="module" src="cena.js"></script>
+</body>
+</html>

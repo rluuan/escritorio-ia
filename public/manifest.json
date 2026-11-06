@@ -1,0 +1,10 @@
+{
+  "name": "Escritório IA",
+  "short_name": "Escritório IA",
+  "description": "As sessões de IA da casa, ao vivo, num escritório 3D.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#17130f",
+  "theme_color": "#17130f",
+  "icons": [{ "src": "icone.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
